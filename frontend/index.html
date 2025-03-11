@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Hello from Frontend</h1>
+  <button onclick="fetchData()">Fetch Backend Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    function fetchData() {
+        fetch('http://localhost:5050/api')
+        .then(res => res.json())
+        .then(data => document.getElementById('output').innerText = JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>
